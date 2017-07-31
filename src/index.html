@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>
+    <%= json.project.title %>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Safari, you're the worst -->
+  <meta name='format-detection' content='telephone=no'>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <%= t.include("partials/_head.html") %>
+</head>
+
+<body>
+
+  <responsive-child class="map-container">
+    <div class="outmost">
+      <section class="chatter">
+        <h1>New laws increase DNA testing of rape evidence</h1>
+        <p>Between July 2015 and September 2016, the State Patrol Crime Lab received 3,619 requests for DNA tests on evidence in rape cases. That represents a 240 percent increase over the 1,065 requests received between July 2013 and September 2014.</p>
+      </section>
+
+      <div class="aspect-ratio-outer">
+        <div class="aspect-ratio-inner">
+
+          <leaflet-map zoom=10>
+            <tile-layer layer="cartoPositron"></tile-layer>
+          </leaflet-map>
+
+        </div>
+        <aside class="legend">
+          <h1>REQUESTS FOR DNA TESTS SINCE JULY 2015</h1>
+          <ul class="scale">
+            <li>
+              <span class="block" style="background-color: #b31f2c"></span> Top 10 submitting state law-enforcement agencies</li>
+            <li>
+              <span class="block" style="background-color: #ddaa87"></span> All other submitting agencies</li>
+          </ul>
+        </aside>
+      </div>
+
+
+      <div class="source">*Canceled kits represent either duplicated
+submissions or cases in which victims
+decided not to go forward with a case. <br> Source: Washington State Patrol Crime Lab
+        <span class="credit">Emily M. Eng / THE SEATTLE TIMES</div>
+    </div>
+  </responsive-child>
+
+  <script src="app.js"></script>
+  <% /*= t.include("partials/_foot.html"); */ %>
+    <%= t.include("partials/_workHere.html") %>
+</body>
+
+</html>
